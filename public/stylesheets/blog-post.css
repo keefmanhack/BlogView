@@ -1,0 +1,43 @@
+.blog-post{
+	/*background: lightblue;*/
+}
+
+.page-container{
+	margin: 0 0 0 15%;
+}
+
+h2{
+	font-size: 12px;
+	color: #5f5f5f;
+}
+
+h3{
+	font-size: 14px;
+	color: blue;
+}
+
+h4{
+	font-size: 12px;
+	color: #5f5f5f;
+}
+
+h5{
+	font-size: 12px;
+	color: #5f5f5f;
+}
+
+img{
+	width: 100%;
+}
+
+.normal-pic{
+	/*width: 100%;*/
+
+	padding: 30px;
+}
+
+.wrap-me{
+	float: left;
+	margin:10px;
+	width: 25%;
+}

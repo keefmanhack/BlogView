@@ -1,0 +1,23 @@
+{
+  "name": "blogview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keefmanhack/BlogView.git"
+  },
+  "author": "Keefer Gregoire",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keefmanhack/BlogView/issues"
+  },
+  "homepage": "https://github.com/keefmanhack/BlogView#readme",
+  "dependencies": {
+    "ejs": "^3.1.2",
+    "express": "^4.17.1"
+  }
+}
