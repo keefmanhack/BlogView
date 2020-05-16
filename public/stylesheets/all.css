@@ -1,0 +1,18 @@
+body{
+	font-family: 'Roboto Slab', serif;
+}
+
+.page-head{
+	padding: 10px 0;
+	text-align: center;
+	background: #4f98ff;
+	margin-bottom: 10px;
+}
+
+.page-head a{
+	padding-top: auto;
+	padding-bottom: auto;
+	color: white;
+	font-weight: 800;
+	font-size: 2rem;
+}

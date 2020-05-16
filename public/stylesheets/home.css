@@ -1,0 +1,55 @@
+.card:hover{
+	cursor: pointer;
+}
+
+.card{
+	background-size: cover;
+	background-position: 50% 50%;
+
+}
+
+.first-blog .card-img-overlay{
+    top: 75%;
+    background: rgba(19, 18, 18, 0.7);
+}
+
+.card-img{
+	background-size: cover;
+	height: 100%;
+	width: auto;
+}
+
+.card-title{
+	color: white;
+    font-size: 2rem;
+}
+
+.page-container{
+	margin: 0 2%;
+}
+
+.page-container .row{
+	margin-bottom: 15px;
+}
+
+
+.page-height{
+	height: 90vh;
+}
+
+.half-page-height{
+	height: 44vh;
+}
+
+.small-display .card-img-overlay{
+	top: 50%;
+    background: rgba(19, 18, 18, 0.7);
+    overflow-wrap: ellipsis;
+}
+
+.truncate {
+  width: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
