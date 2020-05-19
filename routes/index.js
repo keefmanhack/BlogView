@@ -5,7 +5,7 @@ var Blog = require('../models/Blog');
 
 
 router.get('/', function(req, res){
-	Blog.find({}).sort('date').exec(function(err, allBlogs){
+	Blog.find({}).sort('-date').exec(function(err, allBlogs){
 		if(err){
 			console.log(err);
 		}else{
