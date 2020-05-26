@@ -12,7 +12,10 @@ var blogSchema = new mongoose.Schema({
 		normal_image_url: Array,
 		normal_image_caption: Array,
 		justify: Array
-	}
+	},
+	comments: [{type: mongoose.Schema.Types.ObjectId,
+		ref: "Comment"
+	}]
 });
 
 module.exports = mongoose.model("Blog", blogSchema);

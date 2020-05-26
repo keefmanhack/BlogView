@@ -18,6 +18,23 @@
   width: 50%;
 }
 
+#comment-field{
+	margin: 0 10% 0 2%;
+}
+
+.comment{
+	border-radius: 25px;
+	padding: 5px;
+}
+
+.comment:nth-child(even){
+	background: lightgrey;
+}
+
+form{
+	margin: 20px 10% 0 0;
+}
+
 .image-caption{
 	font-weight: 100;
     text-align: left;

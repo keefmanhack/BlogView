@@ -14,7 +14,7 @@ mongoose.connect(process.env.BLOG);
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
-var indexRoutes = require('./routes/index');
+app.use(bodyParser.urlencoded({extended:true}));
 
 
 app.use(indexRoutes);

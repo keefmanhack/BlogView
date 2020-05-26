@@ -21,5 +21,79 @@
 				<p class="image-caption"><%=blog.subData.normal_image_caption[i]%></p>
 			</div>
 		<%}%>
+		<hr>
 	</div>
+
+	<div id="comment-field">
+		<form class="needs-validation" action="/blogs/<%=blog._id%>/newComment" method="POST" novalidate>
+			<div class="row form-group">
+				<label class="col-form-label col-sm-1">Name</label>
+				<div class="col-sm-5">
+					<input class="form-control" type="text" name="name" required>
+					<div class="invalid-feedback">
+				 		<i class="fas fa-exclamation-circle"></i>
+					</div>
+					<div class="valid-feedback">
+					 	<i class="fas fa-check"></i>
+					</div>
+				</div>
+				<label class="col-form-label col-sm-1">Email</label>
+				<div class="col-sm-5">
+					<input class="form-control inline" type="email" name="email" required>
+					<div class="invalid-feedback">
+					 	<i class="fas fa-exclamation-circle"></i>
+					</div>
+					<div class="valid-feedback">
+						 <i class="fas fa-check"></i>
+					</div>
+				</div>
+			</div>
+			<div class="row form-group">
+				
+			</div>
+			<div class="row form-group">
+				<label class="col-form-label col-sm-1">Comment</label>
+				<div class="col-sm-11">
+					<textarea name="comment" class="form-control"></textarea>
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-sm-12">
+					<button class="btn btn-primary">Comment</button>
+				</div>
+			</div>
+		</form>
+
+		<% if (blog && blog.comments){ %>
+			<%for(var i = blog.comments.length-1; i>=0; i--){%>
+				<div class="comment">
+					<h2><%=blog.comments[i].name%></h2>
+					<p><%=blog.comments[i].date%></p>
+					<p><%=blog.comments[i].comment%></p>
+				</div>
+			<%}%>
+		<%}%> 
+	</div>
+
+	<script>
+		// Example starter JavaScript for disabling form submissions if there are invalid fields
+		(function() {
+		  'use strict';
+		  window.addEventListener('load', function() {
+		    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+		    var forms = document.getElementsByClassName('needs-validation');
+		    // Loop over them and prevent submission
+		    var validation = Array.prototype.filter.call(forms, function(form) {
+		      form.addEventListener('submit', function(event) {
+		        if (form.checkValidity() === false) {
+		          event.preventDefault();
+		          event.stopPropagation();
+		        }
+		        form.classList.add('was-validated');
+		      }, false);
+		    });
+		  }, false);
+		})();
+	</script>
+
 <%- include('./partials/footer') %>
