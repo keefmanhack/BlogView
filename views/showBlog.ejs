@@ -8,19 +8,29 @@
 	</div>
 	<div class="post-body">
 		<div class="post-information">
-			<h3 class="author">By <a id="author" href=""><%=blog.author%></a></h3>
+			<h3 class="author">By <a id="author" href="http://www.keefergregoire.com/"><%=blog.author%></a></h3>
 			<h3 class="date-time-posted"><%=blog.date.toLocaleDateString()%> | <%=blog.date.toLocaleTimeString()%></h3>
 		</div>
-		<%for(var i =0; i<blog.subData.sub_heading.length; i++){%>
-			<h2 class="sub-heading"><%=blog.subData.sub_heading[i]%></h2>
-			<%blog.subData.blog_text[i].split('\n').forEach(function(paragraph){%>
+		<%blog.subData.forEach(function(subData){%>
+			<h2 class="sub-heading"><%=subData.sub_heading%></h2>
+			<%subData.blog_text.split('\n').forEach(function(paragraph){%>
 				<p class="main-text"><%-paragraph%></p>
 			<%});%>
-			<div class="image-container center">
-				<img class="body-image"src="<%=blog.subData.normal_image_url[i]%>">
-				<p class="image-caption"><%=blog.subData.normal_image_caption[i]%></p>
-			</div>
-		<%}%>
+			<%if(subData && subData.normal_image_url){%>
+				<div class="image-container center">
+					<img class="body-image"src="<%=subData.normal_image_url%>">
+					<p class="image-caption"><%=subData.normal_image_caption%></p>
+				</div>
+			<%}else if(subData && subData.code){%>
+				<div class="code-container center">
+					<pre class="line-numbers">
+						<code class="language-<%=subData.language.toLowerCase()%>">
+<%=subData.code%>
+						</code>
+					</pre>
+				</div>
+			<%}%>
+		<%})%>
 		<hr>
 	</div>
 
